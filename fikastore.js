@@ -1,3 +1,12 @@
+/* 
+Creator: Handi
+WhatsApp: wa.me/6287717274346
+Base By: Lezz DcodeR
+Upgraded By: FikaAi Dev Offc
+Recode By: Your Name
+
+[ ! ] Jangan Del Credit Ini, Hargai Pembuat Script.
+*/
 require("./settings")
 const fs = require('fs')
 const util = require('util')
@@ -73,80 +82,6 @@ const qtoko = {key: {fromMe: false, participant: `0@s.whatsapp.net`, ...(m.chat 
 const qlive = {key: {participant: '0@s.whatsapp.net', ...(m.chat ? {remoteJid: `status@broadcast`} : {})}, message: {liveLocationMessage: {caption: `ꪎ ${global.ownername}`,jpegThumbnail: ""}}}
 
 
-// GROUN PROETK🗿☕
-
-const { saveProtectionStatus, getProtectionStatus } = require('./utils/proteksi'); // Pastikan untuk mengimpor fungsi proteksi.js
-
-// Fungsi untuk menerapkan proteksi grup
-async function checkAndProtectGroup(m) {
-    const proteksi = getProtectionStatus(m); // Mendapatkan status proteksi grup
-
-    // Proteksi Link (Antilink)
-    if (proteksi.antilink && /(https?:\/\/)?(chat\.whatsapp\.com)/i.test(m.text)) {
-        FikaStore.sendMessage(m.chat, { text: '⛔ *Link grup terdeteksi!*\nAnggota akan dihapus.' });
-        FikaStore.groupParticipantsUpdate(m.chat, [m.sender], 'remove');
-    }
-
-    // Proteksi Bot (Antibot)
-    if (proteksi.antibot && /bot/i.test(m.text)) {
-        FikaStore.sendMessage(m.chat, { text: '⛔ *Bot terdeteksi!*' });
-        FikaStore.groupParticipantsUpdate(m.chat, [m.sender], 'remove');
-    }
-
-    // Proteksi Virtex
-    if (proteksi.antivirtex && /virtex/i.test(m.text)) {
-        FikaStore.sendMessage(m.chat, { text: '⛔ *Virtex terdeteksi!*' });
-        FikaStore.groupParticipantsUpdate(m.chat, [m.sender], 'remove');
-    }
-
-    // Proteksi Konten Toxic
-    if (proteksi.antitoxic && /(toxic|kontroversial)/i.test(m.text)) {
-        FikaStore.sendMessage(m.chat, { text: '⛔ *Toxic content terdeteksi!*' });
-        FikaStore.groupParticipantsUpdate(m.chat, [m.sender], 'remove');
-    }
-
-    // Proteksi Spam (terlalu banyak kata yang sama dalam satu pesan)
-    if (proteksi.antis spam && /(\b\w+\b)(?=.*\1)/.test(m.text)) {
-        FikaStore.sendMessage(m.chat, { text: '⛔ *Spam terdeteksi!*' });
-        FikaStore.groupParticipantsUpdate(m.chat, [m.sender], 'remove');
-    }
-
-    // Proteksi Penggunaan Huruf Kapital (anticaps)
-    if (proteksi.anticaps && /[A-Z]{10,}/.test(m.text)) {
-        FikaStore.sendMessage(m.chat, { text: '⛔ *Penggunaan huruf kapital berlebihan!*' });
-        FikaStore.groupParticipantsUpdate(m.chat, [m.sender], 'remove');
-    }
-
-    // Proteksi Mention Massal
-    if (proteksi.mentionmassal && /@(\w+|\d+)+/g.test(m.text)) {
-        FikaStore.sendMessage(m.chat, { text: '⛔ *Mention massal terdeteksi!*' });
-        FikaStore.groupParticipantsUpdate(m.chat, [m.sender], 'remove');
-    }
-
-    // Proteksi Penggunaan Emoji Berlebihan
-    if (proteksi.emojiOveruse && /(\p{Emoji_Presentation}){5,}/u.test(m.text)) {
-        FikaStore.sendMessage(m.chat, { text: '⛔ *Emoji berlebihan terdeteksi!*' });
-        FikaStore.groupParticipantsUpdate(m.chat, [m.sender], 'remove');
-    }
-
-    // Proteksi Konten Mengandung Kata Kasar (contoh: menggunakan kata kotor)
-    if (proteksi.katakasar && /(anjing|babi|kontol|perek)/i.test(m.text)) {
-        FikaStore.sendMessage(m.chat, { text: '⛔ *Kata kasar terdeteksi!*' });
-        FikaStore.groupParticipantsUpdate(m.chat, [m.sender], 'remove');
-    }
-
-    // Proteksi lainnya...
-}
-
-// Event untuk menerima pesan grup
-FikaStore.on('message', async (m) => {
-    // Cek jika pesan berasal dari grup
-    if (m.isGroup) {
-        await checkAndProtectGroup(m); // Panggil fungsi proteksi grup
-    }
-
-    // Lanjutkan logika lain untuk menangani pesan di grup
-});
 
 // Random Image
 const imageUrls = [
@@ -224,62 +159,7 @@ ppuser = await riza.profilePictureUrl(m.sender, 'image')
 ppuser = 'https://files.catbox.moe/2lw5hm.jpg'
 }
 switch (command) {
-    case 'proteksi_grub': {
-    await FikaStore.sendMessage(m.chat, {
-        text: 'Silakan pilih jenis proteksi yang ingin kamu aktifkan/nonaktifkan:',
-        footer: 'Proteksi Grup Fitur',
-        buttons: [
-            { buttonId: 'antilink_on', buttonText: { displayText: '✅ Antilink' }, type: 1 },
-            { buttonId: 'antibot_on', buttonText: { displayText: '✅ Antibot' }, type: 1 },
-            { buttonId: 'antivirtex_on', buttonText: { displayText: '✅ Antivirtex' }, type: 1 },
-            { buttonId: 'antitoxic_on', buttonText: { displayText: '✅ Antitoxic' }, type: 1 },
-            { buttonId: 'antispam_on', buttonText: { displayText: '✅ Antispam' }, type: 1 },
-            { buttonId: 'anticaps_on', buttonText: { displayText: '✅ Anticaps' }, type: 1 },
-            { buttonId: 'mentionmassal_on', buttonText: { displayText: '✅ Mention Massal' }, type: 1 },
-            { buttonId: 'emojioveruse_on', buttonText: { displayText: '✅ Emoji Overuse' }, type: 1 },
-            { buttonId: 'katakasar_on', buttonText: { displayText: '✅ Kata Kasar' }, type: 1 },
-        ],
-        headerType: 1
-    });
-} break;
-case 'statusproteksi': {
-    if (!m.isGroup) return m.reply('Fitur ini hanya bisa digunakan di grup!');
-    
-    const proteksi = getProtectionStatus(m.chat); // Ambil status dari DB
-
-    const status = (val) => val ? '✅ Aktif' : '❌ Nonaktif';
-
-    const teks = `
-*「 STATUS PROTEKSI GRUP 」*
-
-• Anti Link: ${status(proteksi.antilink)}
-• Anti Bot: ${status(proteksi.antibot)}
-• Anti Virtex: ${status(proteksi.antivirtex)}
-• Anti Toxic: ${status(proteksi.antitoxic)}
-• Anti Spam: ${status(proteksi.antispam)}
-• Anti Capslock: ${status(proteksi.anticaps)}
-• Anti Mention Massal: ${status(proteksi.mentionmassal)}
-• Anti Emoji Berlebihan: ${status(proteksi.emojiOveruse)}
-• Anti Kata Kasar: ${status(proteksi.katakasar)}
-    `.trim();
-
-    const buttons = [
-        { buttonId: '.about-me', buttonText: { displayText: 'About FikaStore' }, type: 1 },
-        { buttonId: '.proteksi_grub', buttonText: { displayText: 'List Proteksi Grub' }, type: 1 },
-        { buttonId: '.menu', buttonText: { displayText: 'Kembali ke Menu' }, type: 1 }
-    ];
-
-    const buttonMessage = {
-        text: teks,
-        footer: 'Fika Protection System',
-        buttons: buttons,
-        headerType: 1
-    };
-
-    Ditss.sendMessage(m.chat, buttonMessage, { quoted: m });
-}
-break;
-case 'about-me':
+    case 'about-me':
 case 'tentang-fikastore': {
     const teks = `
 *Fika Store | Digital Marketplace*
@@ -289,62 +169,53 @@ Fika Store adalah layanan digital yang menyediakan berbagai produk dan jasa sepe
 • VPS & Hosting Panel Pterodactyl
 • Jasa Setup Bot WhatsApp & Server Minecraft
 • Edit & Tambah Fitur Script Bot
-• Sistem Buy Otomatis
+• Sistem Buy Otomatis ( tahap pengembangan )
+_Selengkapnya Klik Button Di Bawah._
 
 Kontak & Informasi:
 • Website: https://web.privhandi.my.id
-• WhatsApp: wa.me/6287717274346
-• Email: cs@fikastore.id
-    `.trim();
+• WhatsApp: wa.me/6287717274346`;
 
-    const buttons = [
-        { buttonId: '.menu', buttonText: { displayText: 'Menu Utama' }, type: 1 },
-        { buttonId: '.produk', buttonText: { displayText: 'Lihat Produk' }, type: 1 },
-        { buttonId: '.statusproteksi', buttonText: { displayText: 'Cek Proteksi Grup' }, type: 1 },
-    ];
-
-    const buttonMessage = {
-        text: teks,
-        footer: 'FikaAi | Digital Assistant',
-        buttons: buttons,
-        headerType: 1
-    };
-
-    Ditss.sendMessage(m.chat, buttonMessage, { quoted: m });
+    const fullMessage = `${teks}`;
+        await riza.sendMessage(m.chat, {
+        footer: `© Create By ${global.ownername}`,
+        buttons: [
+            {
+                buttonId: `.allmenu`,
+                buttonText: { displayText: 'ᴀʟʟᴍᴇɴᴜ' },
+                type: 1
+            },
+            {
+                buttonId: `.store`,
+                buttonText: { displayText: 'sᴛᴏʀᴇ ᴍᴇɴᴜ' },
+                type: 1
+            },
+        ],
+        headerType: 1,
+        viewOnce: true,
+        document: fs.readFileSync("./package.json"),
+        fileName: `${global.namabot}`,
+        mimetype: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        fileLength: 99999999,
+        caption: fullMessage, // Mengirimkan pesan lengkap
+        contextInfo: {
+            isForwarded: true,
+            mentionedJid: [m.sender],
+            forwardedNewsletterMessageInfo: {
+                newsletterJid: global.idSaluran,
+                newsletterName: global.namaSaluran
+            },
+            externalAdReply: {
+                title: `${global.namabot}`,
+                body: `Terverifikasi Oleh WhatsApp`,
+                mediaType: 1,
+                thumbnailUrl: global.imgthumb, 
+                sourceUrl: global.linkSaluran,
+                renderLargerThumbnail: true
+            }
+        }
+    });
 }
-break;
-// Template toggle on/off
-case 'antilink_on':
-case 'antibot_on':
-case 'antivirtex_on':
-case 'antitoxic_on':
-case 'antispam_on':
-case 'anticaps_on':
-case 'mentionmassal_on':
-case 'emojioveruse_on':
-case 'katakasar_on': {
-    const proteksi = getProtectionStatus(m);
-    const key = command.replace('_on', '');
-    proteksi[key] = true;
-    saveProtectionStatus(m);
-    await FikaStore.sendMessage(m.chat, { text: `✅ Proteksi *${key}* telah diaktifkan!` });
-} break;
-
-case 'antilink_off':
-case 'antibot_off':
-case 'antivirtex_off':
-case 'antitoxic_off':
-case 'antispam_off':
-case 'anticaps_off':
-case 'mentionmassal_off':
-case 'emojioveruse_off':
-case 'katakasar_off': {
-    const proteksi = getProtectionStatus(m);
-    const key = command.replace('_off', '');
-    proteksi[key] = false;
-    saveProtectionStatus(m);
-    await FikaStore.sendMessage(m.chat, { text: `❌ Proteksi *${key}* telah dinonaktifkan!` });
-} 
 break;
 case "tourl": {
     if (!/image/.test(mime)) return m.reply("⚠️ Silakan kirim atau reply foto!");
@@ -3475,7 +3346,8 @@ break;
         }
     });
 }
-break;case 'allmenu': {
+break;
+case 'allmenu': {
     const message = `
 ╭─⧁ 𝗙𝗜𝗞𝗔 𝗠𝗨𝗟𝗧𝗜𝗕𝗢𝗧
 │ ✦ 𝘄𝗲𝗹𝗰𝗼𝗺𝗲, ${pushname}
@@ -3514,6 +3386,12 @@ break;case 'allmenu': {
                 buttonText: { displayText: 'ᴡᴇʙ ғɪᴋᴀ' },
                 type: 1
             },
+            {
+		    buttonId: `.about-me`,
+		    buttonText: { displayText: 'ᴛᴇɴᴛᴀɴɢ ғɪᴋᴀ sᴛᴏʀᴇ' },
+		    type: 1
+	    },
+			    
         ],
         headerType: 1,
         viewOnce: true,
