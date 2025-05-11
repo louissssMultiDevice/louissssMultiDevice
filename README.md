@@ -1,4 +1,4 @@
-- 👋 Hi, I’m Handi, Developer Of Bot - FikaStore | Bot Multi Device
+- 👋 Hi, I’m Handi, Creator Bot - FikaStore | Bot Multi Device
 - Credits By FikaTeam
 - Creator & Developer : Handi
 - Base By : Handi, lezz, skyzo, Aditz
