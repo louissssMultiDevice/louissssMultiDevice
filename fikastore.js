@@ -452,106 +452,7 @@ break;
 }
 break;
         
-        case 'cari-lagu': {
-    if (!text) {
-        return m.reply(`Lagu apa yang ingin kamu cari?\n\n*Contoh*: .cari-lagu wide awake`);
-    }
-
-    try {
-        const search = await yts(text);
-        const videoUrl = search.all[0]?.url;
-        if (!videoUrl) return m.reply("Lagu tidak ditemukan.");
-
-        await FikaStore.sendMessage(m.chat, {
-            text: '*Pilih Format Lagu:*',
-            footer: 'Fika-Ai Music',
-            buttons: [
-                {
-                    buttonId: `.playmp3 ${videoUrl}`,
-                    buttonText: { displayText: 'Play MP3' },
-                    type: 1
-                },
-                {
-                    buttonId: `.playmp4 ${videoUrl}`,
-                    buttonText: { displayText: 'Play Video' },
-                    type: 1
-                }
-            ],
-            headerType: 1
-        }, { quoted: m });
-
-    } catch (err) {
-        console.error(err);
-        m.reply("Terjadi kesalahan, coba lagi.");
-    }
-}
-break;
-        case 'playmp3': {
-    try {
-        const result = await ytdl(text);
-        await FikaStore.sendMessage(m.chat, {
-            audio: { url: result.data.url },
-            mimetype: 'audio/mpeg'
-        }, { quoted: m });
-    } catch (err) {
-        console.error(err);
-        m.reply('Gagal memutar lagu.');
-    }
-}
-break;
-
-case 'playmp4': {
-    try {
-        const result = await ytdl(text);
-        await FikaStore.sendMessage(m.chat, {
-            video: { url: result.data.url },
-            caption: `🎬 Now Playing`
-        }, { quoted: m });
-    } catch (err) {
-        console.error(err);
-        m.reply('Gagal memutar video.');
-    }
-}
-break;
         
-        case 'yts-fika':
-case 'ytsearch-fika': {
-    if (!text) return m.reply(`Kirim perintah seperti ini:\n\n.yts lathi`);
-
-    try {
-        const search = await yts(text);
-        let teks = `*Hasil Pencarian YouTube:*\n\n`;
-        const buttons = [];
-
-        for (let i = 0; i < Math.min(5, search.all.length); i++) {
-            const vid = search.all[i];
-            teks += `*${i + 1}. ${vid.title}*\nDurasi: ${vid.timestamp}\nUploader: ${vid.author.name}\n\n`;
-
-            buttons.push({
-                buttonId: `.playmp3 ${vid.url}`,
-                buttonText: { displayText: `🎵 MP3 ${i + 1}` },
-                type: 1
-            });
-            buttons.push({
-                buttonId: `.playmp4 ${vid.url}`,
-                buttonText: { displayText: `🎥 MP4 ${i + 1}` },
-                type: 1
-            });
-        }
-
-        await FikaStore.sendMessage(m.chat, {
-            text: teks.trim(),
-            footer: 'Pilih format yang kamu mau:',
-            buttons: buttons,
-            headerType: 1
-        }, { quoted: m });
-
-    } catch (err) {
-        console.error(err);
-        m.reply("Terjadi kesalahan saat mencari di YouTube.");
-    }
-}
-break;
 
         case 'tt': case 'tiktok': {
     if (!text || !text.includes('tiktok')) {
@@ -636,7 +537,7 @@ case 'ttmp3': {
 break;
 case "reactch": {
 if (!isCreator) return m.reply('Khusus Owner')
-if (!text) return m.reply(".reactch linkpesan 😂")
+if (!text) return replyz(".reactch linkpesan 😂")
 if (!args[0] || !args[1]) return m.reply("Wrong Format")
 if (!args[0].includes("https://whatsapp.com/channel/")) return m.reply("Link tautan tidak valid")
 let result = args[0].split('/')[4]
@@ -648,7 +549,7 @@ m.reply(`Berhasil mengirim reaction ${args[1]} ke dalam channel ${res.name}`)
 break;
 case "jpm": {
 if (!isCreator) return m.reply('Khusus Owner!')
-if (!q) return m.reply("teksnya")
+if (!q) return replyz("teksnya")
 let allgrup = await riza.groupFetchAllParticipating()
 let res = await Object.keys(allgrup)
 let count = 0
@@ -834,7 +735,7 @@ break;
 break;
 case 'encrypt': {
  
- if (!text) return m.reply(`Contoh: ${prefix + command} const eriza = require('eriza-api')`)
+ if (!text) return m.reply(`Contoh: ${prefix + command} const fika = require('fika-api')`)
  const crypto = require('crypto')
  const fs = require('fs').promises
  const path = require('path')
@@ -1448,7 +1349,27 @@ let { domain, ptla, ptlc } = settings
 - Claim Garansi Wajib Membawa Bukti SS Chat Saat Pembelian.
 `;
  // Menentukan penerima pesan
- let recipient = targetNumber ? `${targetNumber}@s.whatsapp.net` : m.sender;
+	 let msg = generateWAMessageFromContent(target, { 
+ viewOnceMessage: { 
+ message: { 
+ messageContextInfo: { deviceListMetadata: {}, deviceListMetadataVersion: 2 }, 
+ interactiveMessage: proto.Message.InteractiveMessage.create({ 
+ body: proto.Message.InteractiveMessage.Body.create({ text: teksh }), 
+ footer: proto.Message.InteractiveMessage.Footer.create({ text: `© ${global.ownername}` }), 
+ nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({ 
+ buttons: [ 
+ { name: "cta_copy", buttonParamsJson: JSON.stringify({ display_text: "Copy Username", copy_code: username }) }, 
+ { name: "cta_copy", buttonParamsJson: JSON.stringify({ display_text: "Copy Password", copy_code: password }) }, 
+ { name: "cta_url", buttonParamsJson: JSON.stringify({ display_text: "Link Login", url: `${domain}`, merchant_url: `${domain}` }) } 
+ ] 
+ }) 
+ }) 
+ } 
+ } 
+ }, {}) 
+let recipient = targetNumber ? `${targetNumber}@s.whatsapp.net` : m.sender;
+ await riza.relayMessage(target, msg.message, { messageId: msg.key.id })
+ await riza.sendMessage(m.chat, { text: '☑️ Silahkan Cek Private ChatBot' }, { quoted: qtoko })
  await riza.sendMessage(recipient, { text: teks }, { quoted: m });
  m.reply(`✅ Data admin telah dikirim ke ${targetNumber ? "nomor yang dituju" : "private chat Anda"}.`);
  } catch (error) {
