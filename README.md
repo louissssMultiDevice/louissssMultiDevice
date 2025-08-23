@@ -1,4 +1,4 @@
-<h1 align="center">🤖 FikaStore Multi Device Bot</h1>
+<h1 align="center">🤖 Hanami Multi Device Bot</h1>
 <p align="center">
   <img src="https://img.shields.io/badge/Creator-Handi-blue?style=for-the-badge&logo=github" />
   <img src="https://img.shields.io/badge/Team-FikaTeam-purple?style=for-the-badge&logo=visualstudiocode" />
@@ -8,14 +8,14 @@
 ---
 
 ### 👋 Hi, I’m **Handi**  
-> 🚀 Creator of **FikaStore Bot Multi Device** | Futuristic WhatsApp Bot  
+> 🚀 Creator of **Hanami Bot Multi Device** | Futuristic WhatsApp Bot  
 
 ---
 
 ## ⚡ About Project
 - 🧑‍💻 **Creator & Developer** : `Handi`
-- 🎖️ **Credits By** : `FikaTeam`
-- 🛠️ **Base By** : `Handi`, `Lezz`, `Skyzo`, `Aditz`
+- 🎖️ **Credits By** : `Hanami-Team`
+- 🛠️ **Base By** : `Handi`
 - 📅 **Created At** : `10 - 04 - 2025`
 
 ---
