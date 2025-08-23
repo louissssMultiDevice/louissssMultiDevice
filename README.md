@@ -1,7 +1,7 @@
 <h1 align="center">🤖 Hanami Multi Device Bot</h1>
 <p align="center">
   <img src="https://img.shields.io/badge/Creator-Handi-blue?style=for-the-badge&logo=github" />
-  <img src="https://img.shields.io/badge/Team-FikaTeam-purple?style=for-the-badge&logo=visualstudiocode" />
+  <img src="https://img.shields.io/badge/Team-HanamiTeam-purple?style=for-the-badge&logo=visualstudiocode" />
   <img src="https://img.shields.io/badge/Base-MultiDevice-green?style=for-the-badge&logo=node.js" />
 </p>
 
