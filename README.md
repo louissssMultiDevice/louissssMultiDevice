@@ -1,127 +1,140 @@
+<!-- ================= HERO SECTION ================= -->
+<img src="https://capsule-render.vercel.app/api?type=waving&height=260&text=Achmad%20Bukhori%20R.&fontSize=42&fontAlignY=40&color=gradient" />
 
 <div align="center">
 
-<!-- FOTO DEV -->
 <img src="https://files.catbox.moe/dtm812.jpg"
-     width="160"
-     style="border-radius:50%; border:4px solid #00FFAA; box-shadow:0 0 25px #00ffaa;"
-     alt="Achmad Bukhori R."/>
+     width="170"
+     style="border-radius:50%; border:5px solid #22C55E; box-shadow:0 0 30px rgba(34,197,94,.6);" />
 
-<br><br>
-
-<h1>Achmad Bukhori R.</h1>
-<h3>🚀 Independent Developer • Automation Engineer • Scraping Enthusiast</h3>
+<h2>Founder • Software Developer • Automation Architect</h2>
 
 <p>
-<i>Building automation, bots, and tools with passion since 2024</i>
+<b>NdiiCia Ecosystem</b><br>
+Automation • Marketplace • Code Sharing
 </p>
+
+<a href="https://ndiicia.xyz">
+  <img src="https://img.shields.io/badge/🌐_ndiicia.xyz-22C55E?style=for-the-badge"/>
+</a>
+<a href="https://code.ndiicia.xyz">
+  <img src="https://img.shields.io/badge/💻_Code_Hub-0EA5E9?style=for-the-badge"/>
+</a>
+<a href="https://whatsapp.com/channel/0029Vb69nLG23n3aRi3cpf2U">
+  <img src="https://img.shields.io/badge/📢_Dev_Channel-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/>
+</a>
 
 </div>
 
 ---
 
-## 👨‍💻 Tentang Saya
+## 👤 About Me
 
-Saya adalah **Developer awam** yang terjun ke dunia **teknologi dan komunikasi sejak tahun 2024**.  
-Kini, saya telah mempelajari serta **menguasai beberapa bahasa pemrograman** dan fokus pada:
+I am a **self-taught developer** who entered the world of **technology and digital communication in 2024**.  
+Starting from curiosity, growing through practice, and now building **real systems used by real users**.
 
-- 🤖 WhatsApp Automation
-- 🕸️ Web Scraping
-- ⚙️ Backend & Tooling
-- 🔌 Modular & Plugin-based System
+My focus is not trends —  
+I build **automation that works**, **tools that scale**, and **systems with purpose**.
 
 ---
 
-## 🧠 Skill & Progress
+## 🧠 Core Expertise
 
 <div align="center">
 
-**JavaScript**
-![JS](https://img.shields.io/badge/JavaScript-95%25-00FFAA?style=for-the-badge&logo=javascript&logoColor=black)
-
-**HTML**
-![HTML](https://img.shields.io/badge/HTML-87%25-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-
-**CSS**
-![CSS](https://img.shields.io/badge/CSS-75%25-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-
-**Python**
-![PY](https://img.shields.io/badge/Python-50%25-3776AB?style=for-the-badge&logo=python&logoColor=white)
-
-**PHP**
-![PHP](https://img.shields.io/badge/PHP-20%25-777BB4?style=for-the-badge&logo=php&logoColor=white)
-
-**Web Scraping**
-![SCRAPE](https://img.shields.io/badge/Scraping-97%25-black?style=for-the-badge&logo=selenium)
+| Skill | Proficiency |
+|------|------------|
+| JavaScript | ██████████ 95% |
+| HTML | █████████ 87% |
+| CSS | ████████ 75% |
+| Python | █████ 50% |
+| PHP | ██ 20% |
+| Web Scraping | ██████████ 97% |
 
 </div>
 
 ---
 
-## 🧩 Tech Stack
+## ⚙️ Technology Stack
 
 ```txt
-JavaScript (Node.js)  •  Baileys MD
-HTML / CSS           •  Automation Tools
-Python               •  Scraping & Parsing
-JSON / REST API      •  Plugin Architecture
+Primary:
+JavaScript (Node.js) • REST API • JSON
 
+Automation:
+WhatsApp MD • CLI Tools • Modular Plugin System
 
----
-
-💬 Pesan & Prinsip Hidup
-
-> "Yang pintar mengajar, yang bego belajar.
-Tetapi, jangan pernah merasa angkuh kepada sesama.
-Jika merasa lelah dengan hidup, jangan khawatir.
-Sebab Tuhan t'lah berjanji, setelah sempit ada kemudahan."
+Others:
+HTML • CSS • Python • Scraping Pipelines
 ```
 
-🌐 Official Network
+🏢 NdiiCia Ecosystem
 
-<div align="center"><a href="https://ndiicia.xyz">
-  <img src="https://img.shields.io/badge/🌐_Website-ndiicia.xyz-0A1AFF?style=for-the-badge&logo=google-chrome"/>
-</a><a href="https://code.ndiicia.xyz">
-  <img src="https://img.shields.io/badge/💻_Code_Share-code.ndiicia.xyz-black?style=for-the-badge&logo=github"/>
-</a><a href="https://whatsapp.com/channel/0029Vb69nLG23n3aRi3cpf2U">
-  <img src="https://img.shields.io/badge/📢_Developer_Channel-WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/>
-</a></div>
+Platform	Role
+
+🌐 ndiicia.xyz	Brand & Digital Marketplace
+💻 code.ndiicia.xyz	Code sharing & dev resources
+📢 WhatsApp Channel	Developer updates & releases
+
+
+
 ---
 
-⭐ Realtime Project Stars
+⭐ Flagship Project (Realtime)
 
-<div align="center"><a href="https://github.com/louisssmultidevice/ndiicia-bot">
-  <img src="https://img.shields.io/github/stars/louisssmultidevice/ndiicia-bot?style=for-the-badge&logo=github"/>
-</a><a href="https://github.com/louisssmultidevice/ndiicia-bot">
-  <img src="https://img.shields.io/github/forks/louisssmultidevice/ndiicia-bot?style=for-the-badge&logo=github"/>
-</a></div>
+<a href="https://github.com/louisssmultidevice/ndiicia-bot">
+  <img src="https://github-readme-stats.vercel.app/api/pin/?username=louisssmultidevice&repo=ndiicia-bot&theme=tokyonight" />
+</a><div align="center">
+<a href="https://github.com/louisssmultidevice/ndiicia-bot">
+  <img src="https://img.shields.io/github/stars/louisssmultidevice/ndiicia-bot?style=for-the-badge"/>
+</a>
+<a href="https://github.com/louisssmultidevice/ndiicia-bot">
+  <img src="https://img.shields.io/github/forks/louisssmultidevice/ndiicia-bot?style=for-the-badge"/>
+</a>
+</div>
 ---
 
-🛒 Layanan & Jualan
+🛒 Services & Products
 
-<div align="center">💼 Panel Bot WhatsApp
-➡️ 3K / 2GB
+<div align="center">🤖 WhatsApp Bot Panel
+💰 3K / 2GB
 
-📞 Nomor Kosong WhatsApp
-➡️ Tergantung stok
+📞 Empty WhatsApp Numbers
+📦 Stock-based availability
+
+📩 Order via WhatsApp
+👉 https://wa.me/6287717274346
 
 </div>
 ---
 
-🚀 Motto Developer
+💬 Principle & Message
 
-Code with logic.
-Build with purpose.
-Share with community.
+> Yang pintar mengajar, yang belajar tidak malu.
+Jangan pernah angkuh kepada sesama.
+Jika hidup terasa sempit, ingatlah:
+Tuhan telah berjanji, setelah kesempitan ada kemudahan.
+
+
+
+
+---
+
+🧭 Identity Snapshot
+
+Name    : Achmad Bukhori R.
+Role    : Founder & Software Engineer
+Focus   : Automation & Practical Systems
+Mindset : Build • Improve • Scale
 
 
 ---
 
 <div align="center"><img src="https://files.catbox.moe/c72p4u.png"
-width="100"
-style="border-radius:50%; border:3px solid #00FFAA;"/>
+width="90"
+style="border-radius:50%; border:3px solid #22C55E;" />
 
 <h3>NdiiCia © 2026</h3>
-<i>Automation • Marketplace • Code Sharing</i>⭐ Jangan lupa follow & star repository!
+<i>Automation • Marketplace • Code Sharing</i>⭐ Follow & star to support the ecosystem
 
-</div>
+</div><img src="https://capsule-render.vercel.app/api?type=waving&height=140&section=footer&color=gradient" />
