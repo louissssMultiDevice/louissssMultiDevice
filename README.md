@@ -75,11 +75,7 @@ JSON / REST API      •  Plugin Architecture
 Tetapi, jangan pernah merasa angkuh kepada sesama.
 Jika merasa lelah dengan hidup, jangan khawatir.
 Sebab Tuhan t'lah berjanji, setelah sempit ada kemudahan."
-
-
-
-
----
+```
 
 🌐 Official Network
 
@@ -129,4 +125,3 @@ style="border-radius:50%; border:3px solid #00FFAA;"/>
 <i>Automation • Marketplace • Code Sharing</i>⭐ Jangan lupa follow & star repository!
 
 </div>
-```
